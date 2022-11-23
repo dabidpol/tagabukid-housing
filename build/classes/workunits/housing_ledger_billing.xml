@@ -1,0 +1,15 @@
+<workunit>
+    <invokers>
+        <invoker type="housing_beneficiary_ledger:form:formActions" 
+                 caption="Billing (Form)" target="popup"/>
+        
+        <invoker type="housing_beneficiary_ledger:list:formActions" 
+                 caption="Billing (List)" target="popup"/>
+        
+<!--        <invoker type="billing:compute" action="preview" caption="Billing" target="popup"/>-->
+    </invokers>
+    <code class="tagabukid.housing.models.HousingLedgerBillingModel" />
+    <pages>
+        <page template="tagabukid.housing.views.HousingLedgerBillingPage" />
+    </pages>
+</workunit>

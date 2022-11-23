@@ -1,0 +1,6 @@
+<workunit extends="wtemplates/enterprise/treasury/BasicCollectionType.xml">
+    <invokers>
+        <invoker type="collectiontype:handler" caption="Housing" name="housing" 
+                 formtype="serial" formno="51"  index="100" />
+    </invokers>
+</workunit>

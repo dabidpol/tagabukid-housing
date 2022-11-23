@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="housing_beneficiary" allowDelete = "false">
+    <invokers>
+        <invoker folderid="home/housing" caption="Housing Beneficiary" action="init" role="ENCODER"/>
+    </invokers>
+</workunit>

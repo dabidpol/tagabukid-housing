@@ -1,0 +1,12 @@
+<workunit schemaName="housing_beneficiary">
+    <invokers>
+        <invoker type="housing_beneficiary:create" caption="Housing Beneficiary" action="create" role="ENCODER"/>
+        <invoker type="housing_beneficiary:open" caption="Housing Beneficiary" action="open" role="ENCODER"/>
+        <invoker type="formActions" caption="Approve" action="approve" 
+                 role="APPROVER" visibleWhen="#{allowApprove==true}"/> 
+    </invokers>
+    <code class="tagabukid.housing.models.HousingBeneficiaryController" />
+    <pages>
+        <page template="tagabukid.housing.views.HousingBeneficiaryView" />
+    </pages>
+</workunit>

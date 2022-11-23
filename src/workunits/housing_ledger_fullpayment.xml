@@ -1,0 +1,27 @@
+<workunit>
+    <invokers>
+        <invoker type="housing_beneficiary_ledger_fullpayment:form:formActions" 
+                 caption="For Full Payment (Form)" target="window"/>
+        
+<!--        <invoker type="housing_beneficiary_ledger:list:formActions" 
+                 caption="Billing (List)" target="popup"/>-->
+        
+<!--        <invoker type="billing:compute" action="preview" caption="Billing" target="popup"/>-->
+    </invokers>
+    <code class="tagabukid.housing.models.HousingLedgerFullpaymentModel" />
+    <pages>
+        <page template="tagabukid.housing.views.HousingLedgerFullpaymentPage" />
+    </pages>
+</workunit>
+
+
+<!--<workunit schemaName="housing_beneficiary_ledger">
+    <invokers>
+        <invoker type="housing_ledger_full_payment" caption="Full Payment Computation" 
+                 target="popup" role="ADMIN"/>
+    </invokers>
+    <code class="tagabukid.housing.models.HousingLedgerFullpaymentModel" />
+    <pages>
+        <page template="tagabukid.housing.views.HousingLedgerFullpaymentPage" />
+    </pages>
+</workunit>-->

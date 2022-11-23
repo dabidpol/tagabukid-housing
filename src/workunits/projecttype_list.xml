@@ -1,0 +1,5 @@
+<workunit extends="com/rameses/seti2/templates/CrudList.xml" schemaName="housing_projecttype" allowDelete = "false">
+    <invokers>
+        <invoker folderid="home/housing" caption="PROJECT TYPES" action="init" role="MASTER"/>
+    </invokers>
+</workunit>

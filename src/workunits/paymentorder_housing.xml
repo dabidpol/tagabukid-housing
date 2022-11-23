@@ -1,0 +1,10 @@
+<workunit extends="src/workunits/paymentorder.xml">
+    <invokers>
+        <invoker type="paymentorder:housing" action="init" caption="Payment Order Support" target="popup"/>
+        
+    </invokers>
+   <code class="etracs.training.plugin.PayOrderController"/>
+    <pages>
+        <page name="default" template="etracs.training.plugin.PayOrderPage" />
+    </pages>
+</workunit>

@@ -1,0 +1,6 @@
+<workunit extends="com/rameses/seti2/templates/CrudLookup.xml" schemaName="housing_ledger_type" 
+          createAllowed="true">
+    <invokers>
+        <invoker type="housing_ledger_type:lookup" caption="Housing Ledger Type" action="init" />
+    </invokers>
+</workunit>

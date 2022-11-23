@@ -1,0 +1,10 @@
+<workunit schemaName="housing_beneficiary_ledger">
+    <invokers>
+<!--        <invoker type="housing_beneficiary_ledger:create" caption="Housing Beneficiary Ledger" action="create" role="ENCODER"/>
+        <invoker type="housing_beneficiary_ledger:open" caption="Housing Beneficiary Ledger" action="open" role="ENCODER"/>-->
+    </invokers>
+    <code class="tagabukid.housing.models.HousingBeneficiaryModel" />
+    <pages>
+        <page template="tagabukid.housing.views.HousingBeneficiaryPage" />
+    </pages>
+</workunit>

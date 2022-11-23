@@ -1,0 +1,10 @@
+"entity.*|selectedProjectitem"[mode == 'read']{
+    enabled:false;
+}
+
+"entity.*|selectedProjectitem"[mode != 'read']{
+    enabled:true;
+}
+
+
+

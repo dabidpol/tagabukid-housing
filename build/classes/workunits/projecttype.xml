@@ -1,0 +1,10 @@
+<workunit schemaName="housing_projecttype">
+    <invokers>
+        <invoker type="housing_projecttype:create" caption="Capture Project Type" action="create" role="MASTER"/>
+        <invoker type="housing_projecttype:open" caption="Capture Project Type" action="open" role="MASTER"/>
+    </invokers>
+    <code class="tagabukid.housing.models.ProjecttypeModel" />
+    <pages>
+        <page template="tagabukid.housing.views.ProjecttypePage" />
+    </pages>
+</workunit>

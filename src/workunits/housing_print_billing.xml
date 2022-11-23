@@ -1,0 +1,18 @@
+<workunit>
+    <invokers>
+      <!--  <invoker folderid="/explorer/training/personnel" action="create" caption="Personnel" target="popup" > </invoker>
+        <invoker folderid="/home/training/personnel" action="create" caption="Personnel" target="popup" 
+        <invoker type="housing_ledger_payment:form:formActions" action="preview" /> 
+        <invoker type="formActions" action="_close" caption="Close" mnemonic="c"> </invoker>
+        
+        > </invoker>  -->
+        <invoker type="billing:housing" action="preview" caption="Payment Order Support" target="popup"/>
+        <invoker type="formActions" action="pay" caption="Pay" mnemonic="p"> </invoker>
+        
+           
+    </invokers>
+    <code class="tagabukid.housing.reports.housingBillingController"/>
+    <pages>
+        <page name="report" template="com.rameses.osiris2.common.ui.ReportPreviewPage" />
+    </pages>
+</workunit>

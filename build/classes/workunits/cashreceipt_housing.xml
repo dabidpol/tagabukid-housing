@@ -1,0 +1,10 @@
+<workunit extends="com/rameses/enterprise/treasury/templates/BillingCashReceipt.xml">
+    <invokers>
+        <invoker type="cashreceipt:housing" action="init" caption="Payment Order Support" target="popup"/>
+        <invoker type="cashreceipt:barcode:51100" action="loadBarcode" caption="Cash Receipt Housing"/>
+    </invokers>
+    <code class="tagabukid.housing.models.HousingLedgerCashReceiptModel"/>
+    <pages>
+        <page template="tagabukid.housing.views.HousingCashReceiptPage"/>
+    </pages>    
+</workunit>
