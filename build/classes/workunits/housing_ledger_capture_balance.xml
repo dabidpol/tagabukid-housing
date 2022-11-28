@@ -1,0 +1,10 @@
+<workunit schemaName="housing_ledger_payment">
+    <invokers>
+        <invoker type="housing_ledger_capture_balance" caption="Capture Balance" 
+                 target="popup" action="create" role="ADMIN"/>
+    </invokers>
+    <code class="tagabukid.housing.models.HousingLedgerCaptureBalanceModel" />
+    <pages>
+        <page template="tagabukid.housing.views.HousingLedgerCaptureBalancePage" />
+    </pages>
+</workunit>

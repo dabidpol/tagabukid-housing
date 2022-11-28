@@ -94,12 +94,19 @@ public class housingBillingController extends ReportController
         def ztotallotamount = xbill.lot.sum()
         def ztotalmriamount = xbill.mri.sum()
         
+        def firstmonth = String.valueOf(xbill.month.get(xbill.month.size()-1))
+        def firstyear = String.valueOf(xbill.year.get(xbill.year.size()-1))
+        def lastmonth = String.valueOf(xbill.month.get(0))
+        def lastyear = String.valueOf(xbill.year.get(0))
+        def zpoitemremarks = firstmonth + "," + firstyear + " to " + lastmonth + "," + lastyear
+        
         println ztotal
         println ztotalamount
         println ztotalpenalty
         println ztotalhouseamount
         println ztotallotamount
         println ztotalmriamount
+        println zpoitemremarks
         
         def order = [
             person : entity,
@@ -109,7 +116,8 @@ public class housingBillingController extends ReportController
             totlotamount : ztotallotamount,
             totmriamount : ztotalmriamount,
             tot : ztotal,
-            remarks : fromtemp.parent.objid[0]
+            remarks : fromtemp.parent.objid[0],
+            poitemremarks : zpoitemremarks
         ]
         
         println order

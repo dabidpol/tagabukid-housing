@@ -119,6 +119,10 @@ class HousingBeneficiaryController extends CrudFormModel{
     def capturePayment() {
         return Inv.lookupOpener("housing_ledger_capture_payment", [parent: selectedProjectitem ] );
     }
+    
+    def captureBalance() {
+        return Inv.lookupOpener("housing_ledger_capture_balance", [parent: selectedProjectitem ] );
+    }
 
     void refreshItem() {
         ledgerEntryHandler.reload();
