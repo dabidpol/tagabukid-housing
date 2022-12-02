@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="housingcertificationone"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="511"
+		 columnSpacing="0"
+		 leftMargin="42"
+		 rightMargin="42"
+		 topMargin="28"
+		 bottomMargin="28"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="TITLE" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="LGUNAME" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="LOGOLGU" isForPrompting="false" class="java.io.InputStream"/>
+	<parameter name="PRINTEDBY" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="PARENTLGUNAME" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="PRINTDATE" isForPrompting="false" class="java.util.Date"/>
+	<parameter name="USERNAME" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="USERJOBTITLE" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="SUBTITLE" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="ORGNAME" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="ServiceRecordItemList" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="SignatoryGroup" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="LGUADDRESS" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="receiptno" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="receiptdate" isForPrompting="false" class="java.util.Date"/>
+	<parameter name="forretirement" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="forpurpose" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="salutation.caption" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="inclusivedate" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="today" isForPrompting="false" class="java.lang.Integer"/>
+	<parameter name="thismonth" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="logo" isForPrompting="false" class="java.io.InputStream"/>
+	<parameter name="housinglogo" isForPrompting="false" class="java.io.InputStream"/>
+
+	<field name="objid" class="java.lang.String"/>
+	<field name="state" class="java.lang.String"/>
+	<field name="status" class="java.lang.String"/>
+	<field name="appointmentgroupname" class="java.lang.String"/>
+	<field name="effectivefrom" class="java.util.Date"/>
+	<field name="effectiveuntil" class="java.util.Date"/>
+	<field name="natureofappointment.objid" class="java.lang.String"/>
+	<field name="dateissued" class="java.util.Date"/>
+	<field name="org.orgunitid" class="java.lang.String"/>
+	<field name="currentsalarystep.objid" class="java.lang.String"/>
+	<field name="compensation" class="java.lang.Object"/>
+	<field name="remarks" class="java.lang.String"/>
+	<field name="signatorygroup.objid" class="java.lang.String"/>
+	<field name="recordlog.datecreated" class="java.util.Date"/>
+	<field name="recordlog.createdbyuserid" class="java.lang.String"/>
+	<field name="recordlog.createdbyuser" class="java.lang.String"/>
+	<field name="recordlog.dateupdated" class="java.util.Date"/>
+	<field name="recordlog.lastupdatedbyuserid" class="java.lang.String"/>
+	<field name="recordlog.lastupdatedbyuser" class="java.lang.String"/>
+	<field name="signatorygroup.state" class="java.lang.Object"/>
+	<field name="signatorygroup.code" class="java.lang.Object"/>
+	<field name="signatorygroup.signatorygroupname" class="java.lang.Object"/>
+	<field name="signatorygroup.remarks" class="java.lang.Object"/>
+	<field name="signatorygroup.signatorytype" class="java.lang.Object"/>
+	<field name="signatorygroup.recordlog.datecreated" class="java.lang.Object"/>
+	<field name="signatorygroup.recordlog.createdbyuserid" class="java.lang.Object"/>
+	<field name="signatorygroup.recordlog.createdbyuser" class="java.lang.Object"/>
+	<field name="signatorygroup.recordlog.dateupdated" class="java.lang.Object"/>
+	<field name="signatorygroup.recordlog.lastupdatedbyuserid" class="java.lang.Object"/>
+	<field name="signatorygroup.recordlog.lastupdatedbyuser" class="java.lang.Object"/>
+	<field name="natureofappointment.name" class="java.lang.String"/>
+	<field name="natureofappointment.description" class="java.lang.String"/>
+	<field name="natureofappointment.code" class="java.lang.String"/>
+	<field name="natureofappointment.pastverb" class="java.lang.Object"/>
+	<field name="natureofappointment.hasappointmentissued" class="java.lang.Object"/>
+	<field name="natureofappointment.recordlog.datecreated" class="java.lang.Object"/>
+	<field name="natureofappointment.recordlog.createdbyuserid" class="java.lang.Object"/>
+	<field name="natureofappointment.recordlog.createdbyuser" class="java.lang.Object"/>
+	<field name="natureofappointment.recordlog.dateoflastupdate" class="java.lang.Object"/>
+	<field name="natureofappointment.recordlog.lastupdatebyuserid" class="java.lang.Object"/>
+	<field name="natureofappointment.recordlog.lastupdatebyuser" class="java.lang.Object"/>
+	<field name="natureofappointment.natureofappointment" class="java.lang.Object"/>
+	<field name="org.name" class="java.lang.String"/>
+	<field name="org.description" class="java.lang.String"/>
+	<field name="org.code" class="java.lang.String"/>
+	<field name="org.parentorgunitid" class="java.lang.Object"/>
+	<field name="org.organizationunittypeid" class="java.lang.Object"/>
+	<field name="org.position1" class="java.lang.Object"/>
+	<field name="org.left" class="java.lang.Object"/>
+	<field name="org.right" class="java.lang.Object"/>
+	<field name="org.position" class="java.lang.Object"/>
+	<field name="org.level" class="java.lang.Object"/>
+	<field name="org.type" class="java.lang.Object"/>
+	<field name="org.addrcitymunid" class="java.lang.Object"/>
+	<field name="org.addrbarangayid" class="java.lang.Object"/>
+	<field name="org.addressdetails" class="java.lang.Object"/>
+	<field name="org.contacts.landline" class="java.lang.Object"/>
+	<field name="org.contacts.mobile" class="java.lang.Object"/>
+	<field name="org.contacts.email" class="java.lang.Object"/>
+	<field name="org.contacts.fax" class="java.lang.Object"/>
+	<field name="org.state" class="java.lang.Object"/>
+	<field name="org.recordlog.datecreated" class="java.lang.Object"/>
+	<field name="org.recordlog.createdbyuserid" class="java.lang.Object"/>
+	<field name="org.recordlog.createdbyuser" class="java.lang.Object"/>
+	<field name="org.recordlog.dateoflastupdate" class="java.lang.Object"/>
+	<field name="org.recordlog.lastupdatebyuserid" class="java.lang.Object"/>
+	<field name="org.recordlog.lastupdatebyuser" class="java.lang.Object"/>
+	<field name="currentsalarystep.name" class="java.lang.Object"/>
+	<field name="currentsalarystep.description" class="java.lang.Object"/>
+	<field name="currentsalarystep.acronymabbreviation" class="java.lang.Object"/>
+	<field name="currentsalarystep.effectivefromdate" class="java.lang.Object"/>
+	<field name="currentsalarystep.effectivetodate" class="java.lang.Object"/>
+	<field name="currentsalarystep.isapproved" class="java.lang.Object"/>
+	<field name="currentsalarystep.recordlog.datecreated" class="java.lang.Object"/>
+	<field name="currentsalarystep.recordlog.createdbyuserid" class="java.lang.Object"/>
+	<field name="currentsalarystep.recordlog.createdbyuser" class="java.lang.Object"/>
+	<field name="currentsalarystep.recordlog.dateoflastupdate" class="java.lang.Object"/>
+	<field name="currentsalarystep.recordlog.lastupdatebyuserid" class="java.lang.Object"/>
+	<field name="currentsalarystep.recordlog.lastupdatebyuser" class="java.lang.Object"/>
+	<field name="currentsalarystep.circular.name" class="java.lang.Object"/>
+	<field name="currentsalarystep.circular.description" class="java.lang.Object"/>
+	<field name="currentsalarystep.circular.acronymabbreviation" class="java.lang.Object"/>
+	<field name="appointmentMemberItems" class="java.lang.Object"/>
+	<field name="signatorygroup.signatoryGroupItems" class="java.lang.Object"/>
+	<field name="natureofappointmentid.objid" class="java.lang.String"/>
+	<field name="natureofappointmentid.name" class="java.lang.String"/>
+	<field name="servicerecordInfos" class="java.lang.Object"/>
+	<field name="person.name" class="java.lang.String"/>
+	<field name="person.birthdate" class="java.util.Date"/>
+	<field name="person.birthplace" class="java.lang.String"/>
+	<field name="person.maidenname" class="java.lang.String"/>
+	<field name="serviceretireInfos" class="java.lang.Object"/>
+	<field name="salutation.caption" class="java.lang.Object"/>
+	<field name="person.address.text" class="java.lang.String"/>
+	<field name="forpurpose" class="java.lang.String"/>
+	<field name="inclusivedate" class="java.lang.String"/>
+	<field name="thisyear" class="java.lang.Integer"/>
+	<field name="today" class="java.lang.Integer"/>
+	<field name="thismonth" class="java.lang.String"/>
+	<field name="completename" class="java.lang.String"/>
+	<field name="completeaddress" class="java.lang.String"/>
+	<field name="purpose.caption" class="java.lang.Object"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="482"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						mode="Transparent"
+						x="1"
+						y="9"
+						width="509"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="staticText-1"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[Republic of the Philippines]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="1"
+						y="27"
+						width="509"
+						height="19"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-1"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica" size="12" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{LGUNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="1"
+						y="46"
+						width="509"
+						height="18"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-2"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{LGUADDRESS}]]></textFieldExpression>
+				</textField>
+				<image  scaleImage="FillFrame" vAlign="Top" hAlign="Left" isUsingCache="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="3"
+						y="0"
+						width="68"
+						height="64"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch" fill="Solid" />
+					<imageExpression class="java.io.InputStream"><![CDATA[$P{logo}]]></imageExpression>
+				</image>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="1"
+						y="64"
+						width="509"
+						height="17"
+						forecolor="#3333FF"
+						backcolor="#FFFFFF"
+						key="textField-3"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Oblique" size="12" isBold="false" isItalic="true" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{ORGNAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="126"
+						width="509"
+						height="21"
+						key="textField-4"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Tahoma" pdfFontName="Helvetica-Bold" size="16" isBold="true" isUnderline="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{TITLE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="314"
+						y="431"
+						width="184"
+						height="20"
+						key="staticText-11"
+						positionType="Float"/>
+					<box leftPadding="5" rightPadding="5">					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true" isUnderline="true"/>
+					</textElement>
+				<text><![CDATA[ENGR. WALTER V. BORRES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="314"
+						y="448"
+						width="184"
+						height="20"
+						key="staticText-12"
+						positionType="Float"/>
+					<box leftPadding="5" rightPadding="5">					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[PGO-REHDD Head]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="24"
+						y="197"
+						width="468"
+						height="77"
+						key="textField-12"/>
+					<box></box>
+					<textElement textAlignment="Justified" isStyledText="true" lineSpacing="Single">
+						<font size="14"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["      <style isBold=\"true\">THIS IS TO CERTIFY</style> that <style isBold=\"true\">"+$F{salutation.caption}+ " " +"</style><style isBold=\"true\">"+$F{completename}+"</style> is an awardee of <style isBold=\"true\">"+$F{completeaddress}+"</style>."
+]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="24"
+						y="260"
+						width="468"
+						height="43"
+						key="textField-13"/>
+					<box></box>
+					<textElement textAlignment="Justified" isStyledText="true" lineSpacing="Single">
+						<font size="14"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["        This certification is being issued for <style isBold=\"true\">"+$F{purpose.caption}+"</style>."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="24"
+						y="302"
+						width="469"
+						height="68"
+						key="textField-14"/>
+					<box></box>
+					<textElement textAlignment="Justified" isStyledText="true" lineSpacing="Single">
+						<font size="14"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["     Issued this "+$F{today}+($F{today}.intValue()==1 ? "st" : $F{today}.intValue()==21 ? "st" : $F{today}.intValue()==31 ? "st" : $F{today}.intValue()==2 ? "nd" : $F{today}.intValue()==22 ? "nd" : "th") + " day of " + $F{thismonth} + ", " + $F{thisyear} + " at PEEDMO, Capitol, Malaybalay City."]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="328"
+						y="96"
+						width="166"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{inclusivedate}]]></textFieldExpression>
+				</textField>
+				<image  scaleImage="FillFrame" vAlign="Top" hAlign="Left" isUsingCache="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="396"
+						y="-1"
+						width="114"
+						height="54"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="image-2"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch" fill="Solid" />
+					<imageExpression class="java.io.InputStream"><![CDATA[$P{housinglogo}	]]></imageExpression>
+				</image>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="5"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="40"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="2"
+						y="1"
+						width="79"
+						height="14"
+						key="staticText-13"
+						positionType="Float"/>
+					<box leftPadding="5" rightPadding="5">					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Receipt No.     :]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2"
+						y="15"
+						width="79"
+						height="14"
+						key="staticText-14"
+						positionType="Float"/>
+					<box leftPadding="5" rightPadding="5">					<pen lineWidth="0.5" lineStyle="Solid"/>
+					<topPen lineWidth="0.0" lineStyle="Solid"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid"/>
+					<bottomPen lineWidth="0.0" lineStyle="Solid"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid"/>
+</box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<text><![CDATA[Receipt Date   :]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="MM/dd/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="81"
+						y="15"
+						width="166"
+						height="14"
+						key="textField-10"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$P{receiptdate}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="81"
+						y="1"
+						width="166"
+						height="14"
+						key="textField-11"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{receiptno}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="255"
+						y="30"
+						width="254"
+						height="10"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="textField-5"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top" rotation="None" lineSpacing="Single">
+						<font fontName="Tahoma" pdfFontName="Helvetica" size="6" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" pdfEncoding ="Cp1252" isStrikeThrough="false" />
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Generated by: ETRACS v2.5 Powered By: PICTD   Printed by: " + $P{PRINTEDBY} + " Print Date: " + new java.text.SimpleDateFormat("yyyy-MM-dd").format( ($P{PRINTDATE} == null) ? new java.util.Date() : $P{PRINTDATE}  )]]></textFieldExpression>
+				</textField>
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

@@ -17,6 +17,9 @@ class HousingBeneficiaryController extends CrudFormModel{
     @Service("TagabukidHousingLedgerBillingService")
     def ledSvc;
     
+    @Service("HousingCertificationOneReportService")
+    def hcertSvc;
+    
     @Service('DateService')
     def dtSvc;
     
@@ -30,6 +33,21 @@ class HousingBeneficiaryController extends CrudFormModel{
  
     boolean isAllowApprove() {
          return ( mode=='read' && entity.state.toString().matches('DRAFT|ACTIVE') ); 
+    }
+    
+    boolean isAllowPaymentOrder(){
+//        def t = ledSvc.findReceiptData(entity)
+//        
+//        //MsgBox.alert(t)
+//        
+//        if (t>90){
+//            return true
+//        }else{
+//            return false
+//        }
+
+          return true
+        
     }
     
     public void afterCreate(){
@@ -416,6 +434,29 @@ class HousingBeneficiaryController extends CrudFormModel{
             ]); 
             loadData(); 
         }
+    }
+    
+    def print() {
+        def op = Inv.lookupOpener( "test:housingcertone", [entity: entity] );
+        op.target = 'self';
+        return op;
+    }
+    
+    def paycert() {
+//        def op = Inv.lookupOpener( "payorder:open", [entity: entity] );
+//        op.target = 'self';
+//        return op;
+
+        def po = [
+            
+            permobjid : entity.objid,
+            name : entity.person.name,
+            address : entity.person.address.text,
+        ]
+
+        def x = hcertSvc.paymentorderSupport(po)
+        
+        MsgBox.alert "Payment Order Number : " + x.ordernum
     }
    
     

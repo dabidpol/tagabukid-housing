@@ -4,6 +4,10 @@
         <invoker type="housing_beneficiary:open" caption="Housing Beneficiary" action="open" role="ENCODER"/>
         <invoker type="formActions" caption="Approve" action="approve" 
                  role="APPROVER" visibleWhen="#{allowApprove==true}"/> 
+         <invoker type="formActions" caption="Print Certification"  
+            action="print"/>
+         <invoker type="formActions" caption="Pay Certification"  
+            action="paycert" visibleWhen="#{allowPaymentOrder==true}"/>
     </invokers>
     <code class="tagabukid.housing.models.HousingBeneficiaryController" />
     <pages>

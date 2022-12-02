@@ -1,0 +1,84 @@
+<workunit extends="rpt_wtemplates/ReportController.xml" >
+    <invokers>
+        <invoker type="test:housingcertone" caption="Preview Certification" action="init" index="1" target="window" />  
+    </invokers>
+<!--    <code class="tagabukid.hrmis.appointment.models.ReportServiceRecordModel" />-->
+    <code>
+    <![CDATA[
+    import com.rameses.rcp.common.*;
+    import com.rameses.rcp.annotations.*;
+    import com.rameses.osiris2.client.*;
+    import com.rameses.osiris2.reports.*;
+
+    class ReportHousingCertificationOneModel extends com.rameses.gov.etracs.rpt.report.AsyncReportController
+    {
+        @Service('HousingCertificationOneReportService') 
+        def svc
+
+        @Service("TagabukidSubayLookupService")
+        def subaylookupsvc
+        
+        @Service("ReportParameterService")
+        def paramSvc;
+
+        String title = 'CERTIFICATION'
+        String REPORT_PATH = 'tagabukid/housing/reports/'
+        String reportName = REPORT_PATH + 'housingcertificationone.jasper';
+        def data
+        
+        //def servicetypes = ['Government', 'Non-Government', 'Both']
+        //def servicetypemaps = ['Government':'1', 'Non-Government':'0', 'Both':'2'] 
+        //def servicetypemap2 = [1 : 'Government', 0 : 'Non-Government', 2 : 'Both'] 
+        //def salutations = ['Mr.', 'Ms.', 'Mrs.']
+        
+        def salutations = [
+            [salute:0, caption:'Mr.'],
+            [salute:1, caption:'Ms.'],
+            [salute:2, caption:'Mrs.'],
+            ]
+        
+        def purposes = [
+            [purp:0, caption:'whatever purpose it may serve him/her best'],
+            [purp:1, caption:'his/her LIGHT/WATER INSTALLATION APPLICATION at BUSECO/Prime Water'],
+            ]
+        
+        void buildReportData(entity, asyncHandler){
+            //println entity
+            svc.getHousingCertificationById(entity,asyncHandler);
+        }
+
+        Map getParameters(){
+            //def params = paramSvc.getStandardParameter()
+       
+           data.parameters.logo = ReportUtil.getImageAsStream("bukseal.jpg")
+           data.parameters.housinglogo = ReportUtil.getImageAsStream("housinglogo.jpg")
+           //println data
+            return data.parameters;
+        }
+        
+
+       def formControl = [
+            getFormControls: {
+                return [
+                    //new FormControl( "checkbox", [caption:'For Retirement', name:'entity.forretirement', preferredSize:'[0,21]', captionWidth:150]),
+                    //new FormControl( "checkbox", [caption:'For GSIS', name:'entity.forgsis', preferredSize:'[0,21]', captionWidth:150]),
+                    //new FormControl( "text", [caption:'Purpose', name:'entity.forpurpose', preferredSize:'[0,50]', captionWidth:150]),
+                    //new FormControl( "combo", [caption:'Service Type', name:'entity.servicetype', items:'servicetypes', expression:'#{item.caption}', preferredSize:'[0,21]', captionWidth:150, allowNull:false, emptyText:'Both']),
+                    new FormControl( "combo", [caption:'Salutation', name:'entity.salutation', items:'salutations', expression:'#{item.caption}', preferredSize:'[0,21]', captionWidth:150, allowNull:false, emptyText:'Mr.']),
+                    new FormControl( "combo", [caption:'Purpose', name:'entity.purpose', items:'purposes', expression:'#{item.caption}', preferredSize:'[0,50]', captionWidth:150, allowNull:false, emptyText:'-']),
+                   
+                ]    
+            },
+       ] as FormPanelModel;
+
+        //SubReport[] getSubReports() {
+          //  return [ 
+            //        new SubReport("ServiceRecordItemList", REPORT_PATH + "servicerecorditems.jasper"),           
+              // ] as SubReport[];    
+       //}
+
+    }
+    ]]>        
+        
+    </code>
+</workunit>
